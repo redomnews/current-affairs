@@ -1,27 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Current Affairs Hub | Daily CA, GK Quiz & Govt Jobs</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Current Affairs | Current Affairs Hub</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#f8f9fa;color:#333}
-header{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;padding:50px 20px;text-align:center}
-header h1{font-size:36px;margin-bottom:10px}
-header p{font-size:16px;opacity:0.9}
-nav{background:#0d47a1;padding:12px;text-align:center;position:sticky;top:0;z-index:100}
-nav a{color:#fff;text-decoration:none;margin:0 15px;font-weight:600;font-size:15px}
-nav a:hover{color:#ffeb3b}
-.container{max-width:1100px;margin:auto;padding:40px 20px}
-.section-title{text-align:center;font-size:28px;margin-bottom:30px;color:#1565c0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.15)}
-.card h3{color:#1565c0;margin-bottom:12px;font-size:20px}
-.card i{color:#1565c0;margin-right:8px}
-.btn{display:inline-block;background:#1565c0;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;margin-top:12px;font-weight:600}
-.btn:hover{background:#0d47a1}
-.about{background:#e3f2fd;padding:50px 20px;text-align:center}
-footer{background:#0d47a1;color:#
+body{font-family:'Segoe UI',Arial;margin:0;background:#f4f4f4}
+header{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;text-align:center;padding:50px 20px}
+header h1{font-size:32px;margin-bottom:10px}
+.container{max-width:800px;margin:30px auto;padding:20px}
+.card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+.card h2{color:#1565c0;margin-bottom:15px;font-size:24px}
+.card p{font-size:16px;line-height:1.8;white-space:pre-line}
+footer{background:#0d47a1;color:#fff;text-align:center;padding:20px;margin-top:30px}
+footer a{color:#ffeb3b;text-decoration:none}
+</style></head><body>
+<header>
+<h1>📰 Daily Current Affairs</h1>
+<p>Roz ke important news yahi padho</p>
+</header>
+
+<div class="container">
+<div class="card" id="ca-card">
+<h2><i class="fa-solid fa-newspaper"></i> Loading...</h2>
+<p>Data aa raha hai...</p>
+</div>
+</div>
+
+<footer id="contact">
+<p>📧 <a href="mailto:lalitlalitmetaliya@gmail.com">lalitlalitmetaliya@gmail.com</a></p>
+<p><a href="https://www.instagram.com/current_affairs_2911/" target="_blank"><i class="fa-brands fa-instagram"></i> @current_affairs_2911</a></p>
+<p>© 2026 Current Affairs Hub</p>
+</footer>
+
+<script>
+// YAHAN APNA GOOGLE SHEET KA APPS SCRIPT LINK DALO
+const SCRIPT_URL = "YOUR_SCRIPT_LINK_HERE";
+
+fetch(SCRIPT_URL)
+.then(res => res.json())
+.then(data => {
+document.getElementById('ca-card').innerHTML =
+`<h2><i class="fa-solid fa-newspaper"></i> ${data.date}</h2>
+<p>${data.current_affairs}</p>`;
+})
+.catch(err => {
+document.getElementById('ca-card').innerHTML = "<h2>Error</h2><p>Data load nahi ho raha. Sheet public hai kya?</p>";
+});
+</script>
+</body></html>
