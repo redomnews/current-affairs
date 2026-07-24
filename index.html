@@ -6,35 +6,32 @@
   <style>
     body { font-family: Arial; background: #f5f5f5; padding: 20px; }
     .news-card { background: white; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .news-card h3 { color: #1a73e8; margin-top: 0; }
-    .news-date { color: #666; font-size: 14px; }
+    .news-card h3 { color: #1a73e8; margin-top: 0; font-size: 22px; }
+    .news-date { color: #666; font-size: 14px; margin-bottom: 10px; }
   </style>
 </head>
 <body>
 
-<h1 style="text-align:center;">🔥 Latest News</h1>
+<h1 style="text-align:center;">🔥 REDOM NEWS DAILY</h1>
 <div id="news-container">Loading...</div>
 
 <script>
-const API_URL = 'https://script.google.com/macros/s/AKfycbwcb0cZWLQAZN-YrTjA0Nyg_5r0vytcVG9eHbm2MoMYN1DKeCZU1scBgNdcz6jY5F8/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzUUygmhOG5POd4XbhVaMcoyW6GFaoxqImYPutdbvq3Hcr-H9p5ivW9WUmGGZaTgH4/exec';
 
 fetch(API_URL)
   .then(res => res.json())
   .then(data => {
-    let html = '';
-    data.forEach(news => {
-      html += `
+    let html = `
       <div class="news-card">
-        <h3>${news.Title || news.title}</h3>
-        <p class="news-date"><b>Date:</b> ${news.Date || news.date}</p>
-        <p>${news.News || news.news}</p>
+        <h3>${data.Title}</h3>
+        <p class="news-date"><b>Date:</b> ${data.Date}</p>
+        <p>${data.News}</p>
       </div>
-      `;
-    });
+    `;
     document.getElementById('news-container').innerHTML = html;
   })
   .catch(err => {
-    document.getElementById('news-container').innerHTML = '<p>Error loading news</p>';
+    document.getElementById('news-container').innerHTML = '<p style="color:red;">Error loading news. Check API link.</p>';
     console.log(err)
   });
 </script>
