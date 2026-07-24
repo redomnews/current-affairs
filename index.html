@@ -6,8 +6,8 @@
   <style>
     body { font-family: Arial; background: #f5f5f5; padding: 20px; }
     h1 { text-align:center; color: #1a73e8; }
-   .news-card { background: white; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-   .news-date { color: #1a73e8; font-size: 14px; font-weight: bold; }
+    .news-card { background: white; border-radius: 10px; padding: 20px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .news-date { color: #1a73e8; font-size: 14px; font-weight: bold; }
   </style>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div id="news-container">Loading...</div>
 
 <script>
-const API_URL =const API_URL = 'https://script.google.com/macros/s/AKfycbyW1TA5BpTn4pPbiKL_kfkltrebSVM0RDmOuU3aFoqz2tmHk7EYIccUloX__y4gu5Q/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbyW1TA5BpTn4pPbiKL_kfkltrebSVM0RDmOuU3aFoqz2tmHk7EYIccUloX__y4gu5Q/exec';
 
 fetch(API_URL)
  .then(res => res.json())
